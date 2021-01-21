@@ -34,5 +34,8 @@ jobs:
           python -m cibuildwheel --output-dir wheels
 
       - name: Upload to PyPI
+        env:
+          TWINE_USERNAME: ${{ secrets.TPYPI_USERNAME }}
+          TW1INE_PASSWORD: ${{ secrets.TPYPI_PASSWORD }}
         run: |
           twine upload --repository testpypi ./wheels/*.whl
