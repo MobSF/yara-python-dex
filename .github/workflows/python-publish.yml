@@ -24,7 +24,7 @@ jobs:
         run: |
           git submodule update --init --recursive
           python -m cibuildwheel --output-dir wheels
-        env: |
+        env:
            CIBW_SKIP: "cp27-* pp27-*"  # skip Python 2.7 wheels
       
       - name: Build wheels for mac and manylinux
