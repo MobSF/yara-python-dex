@@ -33,6 +33,6 @@ jobs:
           git submodule update --init --recursive
           python -m cibuildwheel --output-dir wheels
 
-      - name: test
+      - name: Upload to PyPI
         run: |
-          ls ./wheels/*.whl
+          twine upload --repository testpypi ./wheels/*.whl
