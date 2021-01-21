@@ -318,7 +318,7 @@ setup(
     license='Apache 2.0',
     author='Victor M. Alvarez',
     author_email='plusvic@gmail.com, vmalvarez@virustotal.com',
-    url='https://github.com/VirusTotal/yara-python-dex',
+    url='https://github.com/MobSF/yara-python-dex',
     classifiers=[
         'Programming Language :: Python',
         'License :: OSI Approved :: Apache Software License',
