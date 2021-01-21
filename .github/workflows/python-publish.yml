@@ -15,7 +15,7 @@ jobs:
         exclude:
           # excludes py27 on Windows
           - os: windows-latest
-            python-version: 2.6
+            python-version: 2.7
 
     runs-on: ${{ matrix.os }}
     steps:
