@@ -24,7 +24,7 @@ git submodule update --init --recursive
 python setup.py bdist_wheel
 ```
 
-## Update yara
+## Update yara-python
 
 ```
 cd yara-python
