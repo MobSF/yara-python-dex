@@ -13,3 +13,12 @@ pip install wheel
 pip wheel --wheel-dir=yara-python-dex git+https://github.com/MobSF/yara-python-dex.git
 pip install --no-index --find-links=yara-python-dex yara-python-dex
 ```
+
+## Dev
+
+```
+python -m pip install --upgrade pip
+pip install setuptools wheel
+git submodule update --init --recursive
+python setup.py bdist_wheel
+```
