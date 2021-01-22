@@ -36,7 +36,7 @@ OPTIONS = [
    ('enable-cuckoo', None, 'enable "cuckoo" module'),
    ('enable-magic', None, 'enable "magic" module'),
    ('enable-dotnet', None, 'enable "dotnet" module'),
-   ('enable-dex', True, 'enable "dex" module'),
+   ('enable-dex', None, 'enable "dex" module'),
    ('enable-macho', None, 'enable "macho" module'),
    ('enable-profiling', None, 'enable profiling features')]
 
@@ -100,7 +100,7 @@ class BuildCommand(build):
     self.enable_magic = None
     self.enable_cuckoo = None
     self.enable_dotnet = None
-    self.enable_dex = None
+    self.enable_dex = True
     self.enable_macho = None
     self.enable_profiling = None
 
