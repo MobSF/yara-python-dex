@@ -36,7 +36,7 @@ OPTIONS = [
    ('enable-cuckoo', None, 'enable "cuckoo" module'),
    ('enable-magic', None, 'enable "magic" module'),
    ('enable-dotnet', None, 'enable "dotnet" module'),
-   ('enable-dex', None, 'enable "dex" module'),
+   ('enable-dex', True, 'enable "dex" module'),
    ('enable-macho', None, 'enable "macho" module'),
    ('enable-profiling', None, 'enable profiling features')]
 
