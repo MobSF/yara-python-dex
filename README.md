@@ -6,6 +6,7 @@
 
 Prebuilt dex-enabled yara-python wheels
 
+
 ## Build Locally
 
 ```
@@ -21,4 +22,14 @@ python -m pip install --upgrade pip
 pip install setuptools wheel
 git submodule update --init --recursive
 python setup.py bdist_wheel
+```
+
+## Update yara
+
+```
+cd yara-python
+git checkout tags/v3.11.0
+cd ..
+git submodule update --init --recursive
+git add yara-python
 ```
