@@ -36,6 +36,7 @@ jobs:
           python -m cibuildwheel --output-dir wheels
         env:
            CIBW_ARCHS_MACOS: "x86_64 universal2 arm64"
+           CIBW_ARCHS_LINUX: "auto aarch64"
 
       - uses: actions/upload-artifact@v2
         name: Upload wheels
