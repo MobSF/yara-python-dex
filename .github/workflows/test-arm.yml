@@ -2,13 +2,13 @@ name: Test arm
 
 on: [push, pull_request]
 
-jobs:
+obs:
   build:
     name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macOS-latest]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
       - uses: actions/checkout@v2
@@ -35,3 +35,10 @@ jobs:
           ls wheels
         env:
            CIBW_ARCHS_MACOS: "x86_64 universal2 arm64"
+           CIBW_ARCHS_LINUX: "auto aarch64"
+
+      - uses: actions/upload-artifact@v2
+        name: Upload wheels
+        with:
+          name: wheels
+          path: ./wheels/*.whl
