@@ -8,7 +8,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [macOS-latest]
 
     steps:
       - uses: actions/checkout@v2
@@ -33,3 +33,5 @@ jobs:
           git submodule update --init --recursive
           python -m cibuildwheel --output-dir wheels
           ls wheels
+        env:
+           CIBW_ARCHS_MACOS: "x86_64 universal2 arm64"
