@@ -2,7 +2,7 @@ name: Test arm
 
 on: [push, pull_request]
 
-obs:
+jobs:
   build:
     name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
