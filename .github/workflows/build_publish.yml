@@ -38,7 +38,7 @@ jobs:
         env:
            CIBW_ARCHS_MACOS: "auto x86_64 universal2 arm64"
 
-      - uses: actions/upload-artifact@v4.4.3
+      - uses: actions/upload-artifact@v3
         name: Upload wheels
         with:
           name: wheels
@@ -59,7 +59,7 @@ jobs:
          python -m pip install --upgrade pip
          pip install twine
      - name: Download Artifacts
-       uses: actions/download-artifact@v4.1.8
+       uses: actions/download-artifact@v3
        with:
          name: wheels
          path: ./wheels
