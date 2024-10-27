@@ -1,5 +1,7 @@
 name: Build aarch64 Linux
-on: [push, pull_request]
+on:
+  release:
+    types: [created]
 jobs:
   build_wheels:
     name: Build wheels on ${{ matrix.os }}
