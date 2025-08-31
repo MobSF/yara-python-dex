@@ -30,7 +30,7 @@ jobs:
       - name: Get submodules
         run: git submodule update --init --recursive
       - name: Build wheels
-        uses: pypa/cibuildwheel@v3.1.4
+        uses: pypa/cibuildwheel@v2.23.3
         env:
           CIBW_ARCHS: ${{ matrix.cibw_archs }}
           CIBW_SKIP: "pp*"
