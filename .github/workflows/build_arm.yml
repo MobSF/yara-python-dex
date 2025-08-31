@@ -1,4 +1,4 @@
-name: Build aarch64 Linux
+name: Build & Publish aarch64 Linux
 on:
   release:
     types: [created]
@@ -30,7 +30,7 @@ jobs:
       - name: Get submodules
         run: git submodule update --init --recursive
       - name: Build wheels
-        uses: pypa/cibuildwheel@v2.21.3
+        uses: pypa/cibuildwheel@v3.1.4
         env:
           CIBW_ARCHS: ${{ matrix.cibw_archs }}
           CIBW_SKIP: "pp*"
