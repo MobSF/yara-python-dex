@@ -24,7 +24,7 @@ jobs:
         uses: docker/setup-qemu-action@v2
         with:
           platforms: arm64
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5.0.0
       - uses: actions/setup-python@v5.3.0
         name: Install Python
       - name: Get submodules
@@ -34,7 +34,7 @@ jobs:
         env:
           CIBW_ARCHS: ${{ matrix.cibw_archs }}
           CIBW_SKIP: "pp*"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4.6.2
         with:
           name: wheels
           path: ./wheelhouse/*.whl
@@ -46,7 +46,7 @@ jobs:
 
      steps:
      - name: Set up Python
-       uses: actions/setup-python@v5.3.0
+       uses: actions/setup-python@v5.6.0
        with:
          python-version: '3.x'
      - name: Install twine
@@ -54,7 +54,7 @@ jobs:
          python -m pip install --upgrade pip
          pip install twine
      - name: Download Artifacts
-       uses: actions/download-artifact@v3
+       uses: actions/download-artifact@v5.0.0
        with:
          name: wheels
          path: ./wheelhouse

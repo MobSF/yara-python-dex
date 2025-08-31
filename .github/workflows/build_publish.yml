@@ -13,9 +13,9 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v5.0.0
 
-      - uses: actions/setup-python@v5.3.0
+      - uses: actions/setup-python@v5.6.0
         name: Install Python
 
       - name: Install cibuildwheel
@@ -38,7 +38,7 @@ jobs:
         env:
            CIBW_ARCHS_MACOS: "auto x86_64 universal2 arm64"
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4.6.2
         name: Upload wheels
         with:
           name: wheels
@@ -59,7 +59,7 @@ jobs:
          python -m pip install --upgrade pip
          pip install twine
      - name: Download Artifacts
-       uses: actions/download-artifact@v3
+       uses: actions/download-artifact@v5.0.0
        with:
          name: wheels
          path: ./wheels
