@@ -312,7 +312,7 @@ with open('yara-python/README.rst', 'r', 'utf-8') as f:
 
 setup(
     name='yara-python-dex',
-    version='1.0.7',
+    version='1.0.8',
     description='Python interface for YARA',
     long_description=readme,
     long_description_content_type='text/markdown',
