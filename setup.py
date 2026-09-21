@@ -182,6 +182,9 @@ class BuildExtCommand(build_ext):
     building_for_openbsd = 'openbsd' in self.plat_name # need testing
 
     if building_for_linux:
+      # glibc/musl only declare memmem() when _GNU_SOURCE is set; GCC 14
+      # treats the missing prototype as an error.
+      module.define_macros.append(('_GNU_SOURCE', '1'))
       module.define_macros.append(('USE_LINUX_PROC', '1'))
     elif building_for_windows:
       module.define_macros.append(('USE_WINDOWS_PROC', '1'))

@@ -19,7 +19,7 @@ jobs:
         name: Install Python
 
       - name: Install cibuildwheel
-        run: python -m pip install cibuildwheel==2.23.3
+        run: python -m pip install cibuildwheel==4.2.1
       
       - name: Get submodules
         run: git submodule update --init --recursive
@@ -30,13 +30,15 @@ jobs:
           python -m cibuildwheel --output-dir wheels
         env:
            CIBW_SKIP: "cp27-* pp27-*"  # skip Python 2.7 wheels
+           CIBW_ENABLE: "pypy pypy-eol"
       
       - name: Build wheels for mac and manylinux
         if: "!startsWith(matrix.os, 'windows')"
         run: |
           python -m cibuildwheel --output-dir wheels
         env:
-           CIBW_ARCHS_MACOS: "auto x86_64 universal2 arm64"
+           CIBW_ARCHS_MACOS: "auto auto32 x86_64 universal2 arm64"
+           CIBW_ENABLE: "pypy pypy-eol"
 
       - uses: actions/upload-artifact@v4.6.2
         name: Upload wheels
