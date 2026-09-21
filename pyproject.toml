@@ -1,0 +1,9 @@
+[tool.cibuildwheel]
+# Build CPython betas/RCs when cibuildwheel ships them. Stable new CPython
+# versions land automatically once Dependabot bumps pypa/cibuildwheel.
+enable = ["cpython-prerelease", "pypy", "pypy-eol"]
+# 32-bit is no longer in the default manylinux images used by cibuildwheel 4.
+skip = ["*-win32", "*_i686"]
+
+[tool.cibuildwheel.macos]
+archs = ["x86_64", "arm64"]
